@@ -1,16 +1,10 @@
 jQuery(document).ready(function($){
-    $('#prepend').on('submit' , function(event){
-        event.preventDefault();
-
-        var textToAddUsername = document.getElementById("Username-input").value;
-
-        if(textToAddUsername == "") {
-            alert("You must add a Username");
+    $('#prepend').on('click',function(event){
+        var textInput = document.getElementById("Username-input").value;
+        if(textInput == "") {
+            alert("Text area empty. Please add text.");
             return false;
         }
-
-        $("#tasks").prepend(textToAddUsername);
-
+        $("#tasks").prepend("Your Username is: "  + textInput);
         });    
-
 });
